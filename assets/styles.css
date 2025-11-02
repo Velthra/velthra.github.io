@@ -1,0 +1,69 @@
+/* === Light theme is default === */
+:root{
+  --bg:#FAF7F0;           /* light cream */
+  --bg-alt:#F5F1E6;       /* lighter cream */
+  --surface:#FFFFFF;      /* cards */
+  --text:#0B1220;         /* deep navy text */
+  --muted:#5B6475;        /* soft slate */
+  --brand:#0B2545;        /* deep navy */
+  --accent:#6E8B57;       /* olive */
+  --gold:#B58B00;         /* warm gold */
+  --stroke:#E6E6EA;       /* light border */
+  --radius:14px; --shadow:0 8px 24px rgba(24,24,27,.08);
+}
+/* Dark theme overrides when body has .theme-dark */
+body.theme-dark{
+  --bg:#0b1220; --bg-alt:#0f172a; --surface:#0e1626; --text:#e9eef7; --muted:#a8b3c7;
+  --brand:#2f6feb; --accent:#49B6A9; --gold:#e9b949; --stroke:#1b2740;
+  --shadow:0 8px 24px rgba(0,0,0,.22);
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font:16px/1.6 Inter,system-ui,sans-serif}
+a{color:var(--accent);text-decoration:none}
+a:hover{opacity:.95}
+:focus-visible{outline:2px solid var(--brand); outline-offset:2px}
+img{max-width:100%;height:auto;display:block}
+
+.container{max-width:1160px;margin:0 auto;padding:28px 22px}
+header.header{position:sticky;top:0;z-index:40;background:var(--bg-alt);border-bottom:1px solid var(--stroke)}
+.header-inner{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.brand{font-weight:800;letter-spacing:.3px}
+nav a{margin-left:14px;color:var(--text)}
+nav a[aria-current="page"]{color:var(--gold);font-weight:700}
+main{min-height:70vh}
+footer{color:var(--muted);text-align:center;padding:28px 22px;border-top:1px solid var(--stroke)}
+
+.card{background:var(--surface);border:1px solid var(--stroke);border-radius:var(--radius);box-shadow:var(--shadow)}
+.card.pad{padding:18px}
+.banner{padding:28px;text-align:center;border-radius:var(--radius);border:1px solid var(--stroke);
+  background:linear-gradient(180deg, rgba(110,139,87,.10), rgba(181,139,0,.08) 70%, transparent)}
+.btn{display:inline-block;padding:12px 16px;border-radius:12px;border:1px solid rgba(0,0,0,.12);color:var(--text);cursor:pointer;background:transparent}
+.btn.primary{background:var(--accent);color:#fff;border:none;font-weight:700}
+.thumb{display:block;aspect-ratio:16/9;background:var(--bg-alt);border:1px solid var(--stroke);border-radius:12px}
+.small{font-size:12px;color:var(--muted)}
+
+.skip-link{position:absolute;left:-9999px;top:auto}
+.skip-link:focus{left:12px;top:12px;background:#fff;color:#000;padding:8px 12px;border-radius:8px;z-index:1000}
+
+/* Responsive boxes that line up until wrap */
+.auto-grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fill,minmax(260px,1fr))}
+
+/* Tools page: strict 2 columns (wraps to 1 on small) */
+.tools-grid{display:grid;gap:16px;grid-template-columns:repeat(2, minmax(260px,1fr))}
+@media (max-width:640px){.tools-grid{grid-template-columns:1fr}}
+
+/* Simple 12-col grid for forms */
+.grid-12{display:grid;gap:16px;grid-template-columns:repeat(12,1fr)}
+.col-12{grid-column:span 12}.col-6{grid-column:span 6}.col-4{grid-column:span 4}.col-3{grid-column:span 3}
+@media(max-width:1024px){.col-6,.col-4,.col-3{grid-column:span 12}}
+
+.tabbar{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0 6px}
+.tabbar .btn{padding:8px 12px}
+.hidden{display:none}
+
+/* Toast */
+#toast{position:fixed;right:14px;bottom:14px;max-width:340px}
+
+/* Modal */
+#booking-modal{position:fixed;inset:0;background:rgba(0,0,0,.6);display:none;align-items:center;justify-content:center;padding:20px}
+#booking-modal .frame{border-radius:16px;max-width:900px;width:100%;height:80vh;display:flex;flex-direction:column}
