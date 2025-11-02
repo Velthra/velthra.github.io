@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Velthra — Consulting</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css"></head>
+<body data-page="consulting">
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="header">
+  <div class="container header-inner">
+    <a class="brand" href="index.html" aria-label="Velthra Home">Velthra</a>
+    <nav aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="community.html">Community</a>
+      <a href="consulting.html">Consulting</a>
+      <a href="partnerships.html">Partnerships</a>
+      <a href="tools.html">Tools</a>
+      <a href="archives.html">Archives</a>
+      <a href="about.html">About</a>
+    </nav>
+    <button class="btn" id="theme-toggle" aria-label="Toggle color theme">☀️ / 🌙</button>
+  </div>
+</header>
+<main id="main" class="container">
+  <div class="card pad">
+    <div style="display:flex;gap:16px;align-items:center;flex-wrap:wrap;justify-content:space-between">
+      <h1 style="margin:0">Trusted Consulting for Complex Federal Missions</h1>
+      <button class="btn primary" onclick="openBooking('consulting')">Book Free 30-min</button>
+    </div>
+    <p class="small" style="margin-top:10px">We blend cybersecurity planning, intelligence analysis, and program management for federal clients.
+      Built for leaders who need clarity fast, validated recommendations, and scalable execution support.</p>
+    <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-top:10px">
+      <label for="consulting-package" class="small" style="opacity:.9">Package</label>
+      <select id="consulting-package" style="min-width:220px"></select>
+      <button class="btn primary" onclick="bookConsultingWithPackage()">Book Free 30-min</button>
+    </div>
+  </div>
+  <h2 style="margin:18px 0 8px">Packages</h2>
+  <div class="auto-grid" id="consulting-cards"></div>
+</main>
+<footer>© <span id="year"></span> Velthra — Powered by Selective Mind</footer>
+<div id="toast" class="card pad hidden"></div>
+<div id="booking-modal" class="hidden" role="dialog" aria-modal="true" aria-label="Scheduling">
+  <div class="card frame">
+    <header class="pad" style="display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--stroke)">
+      <strong>Schedule — Free 30-Minute Pre-Consultation</strong>
+      <button class="btn" onclick="closeBooking()">Close ✕</button>
+    </header>
+    <iframe id="booking-frame" title="Scheduler" loading="lazy" style="flex:1;border:0;border-top:1px solid var(--stroke)"></iframe>
+  </div>
+</div>
+
+<script src="assets/app.js" defer></script>
+</body></html>

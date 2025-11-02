@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Velthra — Community</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css"></head>
+<body data-page="community">
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="header">
+  <div class="container header-inner">
+    <a class="brand" href="index.html" aria-label="Velthra Home">Velthra</a>
+    <nav aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="community.html">Community</a>
+      <a href="consulting.html">Consulting</a>
+      <a href="partnerships.html">Partnerships</a>
+      <a href="tools.html">Tools</a>
+      <a href="archives.html">Archives</a>
+      <a href="about.html">About</a>
+    </nav>
+    <button class="btn" id="theme-toggle" aria-label="Toggle color theme">☀️ / 🌙</button>
+  </div>
+</header>
+<main id="main" class="container">
+  <div class="card banner">
+    <h1>Community</h1>
+    <p class="small">Selective Mind insights, Feelville for families, the upcoming Selective Mind book, and community services.</p>
+  </div>
+  <div class="auto-grid" style="margin-top:16px">
+    <section class="card pad">
+      <h2>Selective Mind <span class="small" style="opacity:.85">— App (Coming Soon)</span></h2>
+      <div class="thumb" aria-label="Selective Mind app teaser"></div>
+      <p style="margin:10px 0 0">Analyze claims, trace sources, and score confidence without the hype. Private by default.</p>
+    </section>
+    <section class="card pad">
+      <h2>Feelville <span class="small" style="opacity:.85">— Families & Children</span></h2>
+      <div class="thumb" aria-label="Feelville cover"></div>
+      <p style="margin:10px 0 0">Resources to help ages 3–7 explore emotions and language.</p>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:10px">
+        <a class="btn primary" href="#" onclick="toast('Replace with Amazon link')">Buy on Amazon</a>
+        <a class="btn" href="#" onclick="toast('Serve downloadable PDF')">Emotion Chart — PDF</a>
+      </div>
+    </section>
+    <section class="card pad">
+      <h2>Upcoming Book <span class="small" style="opacity:.85">— Selective Mind</span></h2>
+      <div class="thumb" aria-label="Book teaser"></div>
+      <p style="margin:10px 0 0">A framework for mental autonomy, cognitive security, and decision clarity.</p>
+      <div style="margin-top:10px"><button class="btn" onclick="openBooking('community')">Get Release Alerts →</button></div>
+    </section>
+  </div>
+  <section class="card pad" style="margin-top:16px">
+    <h2 style="margin-top:0">Community Services</h2>
+    <div class="auto-grid" id="community-services"></div>
+  </section>
+</main>
+<footer>© <span id="year"></span> Velthra — Powered by Selective Mind</footer>
+<div id="toast" class="card pad hidden"></div>
+<div id="booking-modal" class="hidden" role="dialog" aria-modal="true" aria-label="Scheduling">
+  <div class="card frame">
+    <header class="pad" style="display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--stroke)">
+      <strong>Schedule — Free 30-Minute Pre-Consultation</strong>
+      <button class="btn" onclick="closeBooking()">Close ✕</button>
+    </header>
+    <iframe id="booking-frame" title="Scheduler" loading="lazy" style="flex:1;border:0;border-top:1px solid var(--stroke)"></iframe>
+  </div>
+</div>
+
+<script src="assets/app.js" defer></script>
+</body></html>

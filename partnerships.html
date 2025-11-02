@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Velthra — Partnerships</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css"></head>
+<body data-page="partnerships">
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="header">
+  <div class="container header-inner">
+    <a class="brand" href="index.html" aria-label="Velthra Home">Velthra</a>
+    <nav aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="community.html">Community</a>
+      <a href="consulting.html">Consulting</a>
+      <a href="partnerships.html">Partnerships</a>
+      <a href="tools.html">Tools</a>
+      <a href="archives.html">Archives</a>
+      <a href="about.html">About</a>
+    </nav>
+    <button class="btn" id="theme-toggle" aria-label="Toggle color theme">☀️ / 🌙</button>
+  </div>
+</header>
+<main id="main" class="container">
+  <div class="card banner">
+    <h1>Partnerships</h1>
+    <p class="small">Sponsor impact, collaborate, or support directly. T‑shirts via Stripe; crypto via MoonPay. Other payments by email invoice.</p>
+    <div class="tabbar" role="tablist" aria-label="Partnership subsections">
+      <button class="btn primary" role="tab" aria-selected="true" aria-controls="p-merch" id="tab-merch" data-p-tab="merch">Partner Merch</button>
+      <button class="btn" role="tab" aria-selected="false" aria-controls="p-moonpay" id="tab-moonpay" data-p-tab="moonpay">MoonPay Support</button>
+      <button class="btn" role="tab" aria-selected="false" aria-controls="p-opps" id="tab-opps" data-p-tab="opps">Opportunities</button>
+      <button class="btn" role="tab" aria-selected="false" aria-controls="p-contact" id="tab-contact" data-p-tab="contact">Contact</button>
+    </div>
+  </div>
+
+  <div id="p-merch" role="tabpanel" tabindex="0" aria-labelledby="tab-merch" style="margin-top:12px">
+    <h2>Support via T‑Shirt (Stripe)</h2>
+    <div class="card pad" style="display:grid;gap:14px;grid-template-columns:1fr 1fr">
+      <div><div class="thumb" aria-label="T‑shirt image"></div></div>
+      <div>
+        <label>Size<br>
+          <select id="size"><option>XS</option><option>S</option><option selected>M</option><option>L</option><option>XL</option><option>2XL</option></select>
+        </label><br><br>
+        <label>Color<br>
+          <select id="color"><option>Black</option><option>Navy</option><option>White</option></select>
+        </label><br><br>
+        <button class="btn primary" id="stripe-buy">Buy T‑Shirt</button>
+        <p class="small" style="margin-top:8px">Checkout opens on Stripe. We’ll confirm size/color via email on purchase.</p>
+      </div>
+    </div>
+  </div>
+
+  <div id="p-moonpay" class="hidden" role="tabpanel" tabindex="0" aria-labelledby="tab-moonpay" style="margin-top:12px">
+    <h2>MoonPay Support</h2>
+    <div class="card pad">
+      <div class="grid-12">
+        <label class="col-3">Amount (USD)<br><input id="mp-amount" type="number" min="5" step="1" value="25"></label>
+        <label class="col-3">Crypto<br>
+          <select id="mp-currency"><option value="usdc">USDC</option><option value="eth">ETH</option><option value="sol">SOL</option><option value="btc">BTC</option></select>
+        </label>
+        <label class="col-6">Wallet Address<br><input id="mp-wallet" placeholder="Your wallet address"></label>
+      </div>
+      <label>Redirect URL after purchase<br><input id="mp-redirect" value="https://yourdomain.com/thank-you.html"></label>
+      <label>Public API Key (Client)<br><input id="mp-key" placeholder="pk_live_or_test_your_public_key"></label>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:8px">
+        <button class="btn primary" id="mp-open">Open MoonPay Checkout</button>
+        <button class="btn" id="mp-preview">Preview URL</button>
+      </div>
+      <div class="small" id="mp-url" style="display:none;word-break:break-all;margin-top:8px"></div>
+    </div>
+  </div>
+
+  <div id="p-opps" class="hidden" role="tabpanel" tabindex="0" aria-labelledby="tab-opps" style="margin-top:12px">
+    <h2>Ways to Partner</h2>
+    <div class="auto-grid">
+      <article class="card pad"><h3>Speaking & Workshops</h3><p class="small">Cognitive security, systems thinking, resilience.</p><a class="btn" href="#p-contact" onclick="document.querySelector('[data-p-tab=contact]').click()">Inquire →</a></article>
+      <article class="card pad"><h3>Sponsorships & Scholarships</h3><p class="small">Fund community cohorts, mentorship seats, or book drives.</p><a class="btn" href="#p-contact" onclick="document.querySelector('[data-p-tab=contact]').click()">Sponsor →</a></article>
+      <article class="card pad"><h3>Pilots & Experiments</h3><p class="small">Test decision tools or standards across orgs.</p><a class="btn" href="#p-contact" onclick="document.querySelector('[data-p-tab=contact]').click()">Start a Pilot →</a></article>
+    </div>
+  </div>
+
+  <div id="p-contact" class="hidden" role="tabpanel" tabindex="0" aria-labelledby="tab-contact" style="margin-top:12px">
+    <h2>Contact</h2>
+    <div class="card pad">
+      <form id="contact-form">
+        <div class="grid-12">
+          <label class="col-6">Name<br><input name="name" autocomplete="name" required></label>
+          <label class="col-6">Email<br><input name="email" type="email" autocomplete="email" required></label>
+          <label class="col-12">Message<br><textarea name="message" rows="6" required></textarea></label>
+          <input type="text" name="company" tabindex="-1" autocomplete="off" class="hidden" aria-hidden="true">
+        </div>
+        <button class="btn primary" style="margin-top:10px" type="submit">Send</button>
+      </form>
+    </div>
+  </div>
+</main>
+<footer>© <span id="year"></span> Velthra — Powered by Selective Mind</footer>
+<div id="toast" class="card pad hidden"></div>
+<div id="booking-modal" class="hidden" role="dialog" aria-modal="true" aria-label="Scheduling">
+  <div class="card frame">
+    <header class="pad" style="display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--stroke)">
+      <strong>Schedule — Free 30-Minute Pre-Consultation</strong>
+      <button class="btn" onclick="closeBooking()">Close ✕</button>
+    </header>
+    <iframe id="booking-frame" title="Scheduler" loading="lazy" style="flex:1;border:0;border-top:1px solid var(--stroke)"></iframe>
+  </div>
+</div>
+
+<script src="assets/app.js" defer></script>
+</body></html>

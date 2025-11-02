@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Velthra — Home</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+<meta name="theme-color" content="#FAF7F0" />
+<meta name="description" content="Velthra: Community, Consulting, Partnerships, and Tools — responsive, accessible." />
+</head>
+<body data-page="home">
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="header">
+  <div class="container header-inner">
+    <a class="brand" href="index.html" aria-label="Velthra Home">Velthra</a>
+    <nav aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="community.html">Community</a>
+      <a href="consulting.html">Consulting</a>
+      <a href="partnerships.html">Partnerships</a>
+      <a href="tools.html">Tools</a>
+      <a href="archives.html">Archives</a>
+      <a href="about.html">About</a>
+    </nav>
+    <button class="btn" id="theme-toggle" aria-label="Toggle color theme">☀️ / 🌙</button>
+  </div>
+</header>
+<main id="main" class="container">
+  <div class="card banner">
+    <h1>Empowering People & Strengthening Systems</h1>
+    <p class="small">Serving communities through mentorship and initiatives, and serving government through strategy and consulting.</p>
+    <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:10px">
+      <a class="btn primary" href="community.html">Explore Community</a>
+      <a class="btn" href="consulting.html">Explore Consulting</a>
+    </div>
+  </div>
+
+  <h2 style="margin:18px 0 8px">Featured</h2>
+  <div class="auto-grid">
+    <article class="card pad"><h3>Selective Mind</h3><p class="small">Frameworks for mental autonomy and cognitive security.</p><a class="btn" href="community.html">Learn more →</a></article>
+    <article class="card pad"><h3>Feelville</h3><p class="small">Kids 3–7: emotions, language, and playful learning.</p><a class="btn" href="community.html">Explore →</a></article>
+    <article class="card pad"><h3>Government Consulting</h3><p class="small">Clarity fast. Standards aligned. Execution support.</p><a class="btn" href="consulting.html">See packages →</a></article>
+    <article class="card pad"><h3>Partner with Us</h3><p class="small">Merch, MoonPay support, pilots, and sponsorships.</p><a class="btn" href="partnerships.html">Ways to partner →</a></article>
+  </div>
+</main>
+<footer>© <span id="year"></span> Velthra — Powered by Selective Mind</footer>
+<div id="toast" class="card pad hidden"></div>
+<div id="booking-modal" class="hidden" role="dialog" aria-modal="true" aria-label="Scheduling">
+  <div class="card frame">
+    <header class="pad" style="display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--stroke)">
+      <strong>Schedule — Free 30-Minute Pre-Consultation</strong>
+      <button class="btn" onclick="closeBooking()">Close ✕</button>
+    </header>
+    <iframe id="booking-frame" title="Scheduler" loading="lazy" style="flex:1;border:0;border-top:1px solid var(--stroke)"></iframe>
+  </div>
+</div>
+
+<script src="assets/app.js" defer></script>
+</body>
+</html>
