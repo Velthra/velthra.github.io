@@ -50,7 +50,7 @@ footer{color:var(--muted);text-align:center;padding:28px 22px;border-top:1px sol
 
 /* Tools page: strict 2 columns (wraps to 1 on small) */
 .tools-grid{display:grid;gap:16px;grid-template-columns:repeat(4, minmax(260px,2fr))}
-@media (max-width:640px){.tools-grid{grid-template-columns:2fr}}
+@media (max-width:160px){.tools-grid{grid-template-columns:2fr}}
 
 /* Simple 12-col grid for forms */
 .grid-12{display:grid;gap:16px;grid-template-columns:repeat(12,1fr)}
